@@ -2,16 +2,24 @@ import React from "react";
 import { BsFacebook, BsLinkedin, BsGithub } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
 import { Link } from "react-router-dom";
+import {motion} from "framer-motion"
 
 const Footer = () => {
   return (
     <div className="w-full h-auto bg-secondary ">
       <div className="flex md:flex-row flex-wrap md:justify-around justify-center md:p-4 m-auto px-auto">
         <div className="my-6 mx-20 w-[150px]">
-          <h1 className="text-lg text-whiteColor mb-2 font-medium p-auto ">
+          <motion.h1 
+          initial={{scale:0}}
+          whileInView={{scale:1}}
+          transition ={{delay:0.2,duration:0.6}}
+           className="text-lg text-whiteColor mb-2 font-medium p-auto ">
             Movies
-          </h1>
-          <ul>
+          </motion.h1>
+          <motion.ul 
+          initial={{scale:0}}
+          whileInView={{scale:1}}
+          transition={{delay:0.2,duration:0.6}}>
             <li className="text-sm text-whiteColor opacity-80 hover:bg-background py-2 px-3">
               Action
             </li>
@@ -24,13 +32,20 @@ const Footer = () => {
             <li className="text-sm text-whiteColor opacity-80 hover:bg-background py-2 px-3">
               Funny
             </li>
-          </ul>
+          </motion.ul>
         </div>
         <div className="my-6 mx-20 w-[150px]">
-          <h1 className="text-lg text-whiteColor mb-2 font-medium p-auto ">
+          <motion.h1
+          initial={{scale:0}}
+          whileInView={{scale:1}}
+          transition ={{delay:0.3,duration:0.6}}
+          className="text-lg text-whiteColor mb-2 font-medium p-auto ">
             TV-Series
-          </h1>
-          <ul>
+          </motion.h1>
+          <motion.ul
+           initial={{scale:0}}
+           whileInView={{scale:1}}
+           transition={{delay:0.3,duration:0.6}}>
             <li className="text-sm text-whiteColor opacity-80 hover:bg-background py-2 px-3">
               Action
             </li>
@@ -43,14 +58,20 @@ const Footer = () => {
             <li className="text-sm text-whiteColor opacity-80 hover:bg-background py-2 px-3">
               Cartoon
             </li>
-          </ul>
+          </motion.ul>
         </div>
         <div className="my-6 mx-20 w-[150px]">
           <div>
-            <h1 className="text-lg text-whiteColor mb-2 font-medium p-auto ">
+            <motion.h1
+            initial={{scale:0}}
+            whileInView={{scale:1}}
+            transition ={{delay:0.4,duration:0.6}} className="text-lg text-whiteColor mb-2 font-medium p-auto ">
               Contact
-            </h1>
-            <ul>
+            </motion.h1>
+            <motion.ul
+             initial={{scale:0}}
+             whileInView={{scale:1}}
+             transition={{delay:0.4,duration:0.6}}>
               <li className="text-sm text-whiteColor text-start opacity-80 hover:bg-background py-2 px-3">
                 Chanmin Thu
               </li>
@@ -60,12 +81,20 @@ const Footer = () => {
               <li className="text-sm text-whiteColor text-start opacity-80 hover:bg-background py-2 px-3">
                 +959 977 452 160
               </li>
-            </ul>
+            </motion.ul>
           </div>
         </div>
         <div className="my-6 mx-20 w-[150px]">
-          <h1 className="text-lg text-whiteColor mb-2 font-medium ">Support</h1>
-          <ul className="gap-3">
+          <motion.h1 
+          initial={{scale:0}}
+          whileInView={{scale:1}}
+          transition ={{delay:0.5,duration:0.6}}
+          className="text-lg text-whiteColor mb-2 font-medium ">Support</motion.h1>
+          <motion.ul  
+          initial={{scale:0}}
+          whileInView={{scale:1}}
+          transition={{delay:0.4,duration:0.6}}
+          className="gap-3">
             <li className="text-sm text-whiteColor opacity-80 hover:bg-background py-2 px-3">
               FAQ
             </li>
@@ -75,14 +104,17 @@ const Footer = () => {
             <li className="text-sm text-whiteColor opacity-80 hover:bg-background py-2  px-3">
               Devices
             </li>
-          </ul>
+          </motion.ul>
         </div>
       </div>
       <div className="bg-transprent">
         <div className="flex flex-row justify-evenly py-8">
-          <h1 className="text-2xl text-redColor font-semibold mr-6">
+          <motion.h1
+          initial={{scale:0}}
+          whileInView={{scale:1}}
+          transition ={{delay:0.4,duration:0.6}} className="text-2xl text-redColor font-semibold mr-6">
             Mm-movie.
-          </h1>
+          </motion.h1>
           <Link to='https://www.facebook.com/profile.php?id=100015446434578'>
           <BsFacebook className="text-whiteColor hover:scale-125 hover:text-highlight" />
           </Link>
@@ -96,9 +128,12 @@ const Footer = () => {
           <SiGmail className="text-whiteColor hover:scale-12 hover:text-highlight" />
           </Link>
         </div>
-        <div className="mx-auto py-5 w-full text-center">
+        <motion.div
+        initial={{opacity:0}}
+        whileInView={{opacity:1}}
+        transition={{delay:0.4,duration:0.6}} className="mx-auto py-5 w-full text-center">
         <span className="text-sm  opacity-80 text-whiteColor">2023@ CopyRight Design By Chanmin Thu</span>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

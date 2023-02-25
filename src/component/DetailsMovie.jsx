@@ -6,6 +6,7 @@ import { FaPlay } from "react-icons/fa";
 import { MdStarRate } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { useNavigate } from "react-router-dom";
+import {motion} from 'framer-motion'
 
 const DetailsMovie = () => {
   let { id } = useParams();
@@ -36,7 +37,7 @@ const DetailsMovie = () => {
   }, [movie]);
   const nav = useNavigate()
   return (
-    <div className="bg-background h-screen">
+    <div className="bg-background md:h-screen h-full">
       {isFetching ? (
         <h1>Loading</h1>
       ) : (
@@ -51,19 +52,34 @@ const DetailsMovie = () => {
          
             <div className="w-[250px] hidden md:block h-[400px] rounded-md">
 
-              <img
+            <motion.img
+            initial={{scale:0}}
+            whileInView={{scale:1}}
+            transition={{delay:0.4,duration:0.7}}
                 className="w-[250px] h-[400px] rounded-md"
                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
               />
             </div>
             <div className="md:w-[500px] w-full md:h-[400px] h-[430px] flex justify-end ml-10 md:ml-0 md:justify-center text-start flex-col mt-30 md:mt-30">
-              <h1 className="text-highlight md:text-4xl text-2xl font-semibold mb-2">
+            <motion.h1 
+            initial={{y:30,opacity:0}}
+            whileInView={{y:0,opacity:1}}
+            transition={{delay:0.3,duration:0.5}}
+            className="text-highlight md:text-4xl text-2xl font-semibold mb-2">
                 {movie.original_title}
-              </h1>
-              <span className="text-whiteColor text-sm mb-5 opacity-95 inline-block">
+              </motion.h1>
+              <motion.span
+            initial={{opacity:0}}
+            whileInView={{opacity:1}}
+            transition={{delay:0.35,duration:0.9}}
+            className="text-whiteColor text-sm mb-5 opacity-95 inline-block">
                 ({movie.release_date}) • {movie.genres[0].name} • {movie.runtime}min
-              </span>
-              <div className="flex mb-5">
+              </motion.span>
+              <motion.div
+               initial={{opacity:0}}
+               whileInView={{opacity:1}}
+               transition={{delay:0.4,duration:0.9}} 
+               className="flex mb-5">
                 <AiFillHeart className="text-whiteColor text-2xl mr-5" />
                 <MdStarRate className="text-highlight text-2xl" />
                 <span className="text-whiteColor text-sm ml-2 mr-5">
@@ -71,7 +87,7 @@ const DetailsMovie = () => {
                 </span>
                 <FaPlay className="text-whiteColor text-2xl mr-2" onClick={()=>setPlay(true)} />
                 <span className="text-whiteColor">Play trailer</span>
-              </div>
+              </motion.div>
               <div className={`${play? "md:w-[650px] w-full md:h-full h-[300px]":"w-0 h-0"} z-40 absolute md:top-0 bottom-20`}>
             <RxCross2
              onClick={()=>setPlay(false)}
@@ -88,9 +104,12 @@ const DetailsMovie = () => {
 
             </iframe>
             </div>
-              <p className="text-whiteColor opacity-80 md:text-md">
+               <motion.p 
+            initial={{y:30,opacity:0}}
+            whileInView={{y:0,opacity:1}}
+            transition={{delay:0.5,duration:0.5}} className="text-whiteColor opacity-80 md:text-md">
                 {movie.overview}
-              </p>
+              </motion.p>
               <div onClick={()=>nav(-1)} className="fixed top-24 right-10">
               <RxCross2 className="text-whiteColor text-2xl" />
               </div>

@@ -7,7 +7,7 @@ const activeLink = ({isActive})=>{
 }}
 const Tv = () => {
   return (
-    <div className='bg-background h-auto'>
+    <div className='bg-background md:h-auto h-screen'>
       <ul className='flex flex-row text-whiteColor border-spacing-1 w-full justify-around border-2 border-x-0 border-t-0 border-b-transprent '>
        <NavLink style={activeLink} to='/tv/popular'><li>Popular</li></NavLink>
        <NavLink style={activeLink} to='/tv/top_rated'><li>Top Rated</li></NavLink>

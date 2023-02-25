@@ -23,7 +23,9 @@ const DetailsTv = () => {
   return (
     <div className="bg-background h-screen">
       {isFetching ? (
-        <h1>Loading</h1>
+      <div className="realtive w-full bg-background h-auto">
+      <div className="w-[250px] h-[400px] bg-transprent"></div>
+      </div>
       ) : (
         <div className="realtive w-full bg-background h-auto">
          

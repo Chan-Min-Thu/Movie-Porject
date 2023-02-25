@@ -4,6 +4,7 @@ import { useGetDataQuery } from "../../features/api";
 import { MdOutlineArrowForwardIos, MdArrowBackIos } from "react-icons/md";
 import { Link,useNavigate } from "react-router-dom";
 import {BsYoutube} from "react-icons/bs"
+import {motion} from 'framer-motion'
 
 const TopRated = () => {
   
@@ -25,7 +26,7 @@ const TopRated = () => {
     <div className="w-full flex relative flex-col p-4">
       <div className="flex justify-between ">
         <h1 className="text-2xl font-semibold text-whiteColor">
-          Top Rated Tv Series
+          Top Rated Tv-series
         </h1>
         <Link to='/tv/top_rated'>
         <button
@@ -49,12 +50,23 @@ const TopRated = () => {
         ) : (
           tvData.results?.map((tv) => (
             <div key={tv.id} onClick={()=>nav(`/tv/${tv.id}`)} className='w-[200px] relative h-[300px] p-10 rounded'>
-            <img src={`https://image.tmdb.org/t/p/w500/${tv.poster_path}`} 
+             <motion.img 
+            initial={{scale:0}}
+            whileInView={{scale:1}}
+            transition={{delay:0.4,duration:0.5}}
+            src={`https://image.tmdb.org/t/p/w500/${tv.poster_path}`} 
             className="max-w-[147px] h-full rounded hover:opacity-30"/>
-            <div className="text-2xl absolute opacity-0 rounded hover:opacity-100 w-[147px] h-[221px] top-[40px] p-3 text-redColor bg-transprent">
+             <motion.div 
+          initial={{opacity:0}}
+          whileHover={{opacity:1}}
+          transition={{delay:0.2,duration:0.2}}
+          className="text-2xl absolute opacity-0 rounded hover:opacity-100 w-[147px] h-[221px] top-[40px] p-3 text-redColor bg-transprent">
             <BsYoutube className="text-center m-auto mt-28" />
-            </div>
-            <span className='text-whiteColor'>{tv.name}</span>
+            </motion.div>
+            <motion.span 
+            initial={{opacity:0}}
+            whileInView={{opacity:1}}
+            transition={{delay:0.4,duration:0.8}} className='text-whiteColor'>{tv.name}</motion.span>
        </div> 
           ))
         )}

@@ -50,7 +50,8 @@ const Header = () => {
               <h1 className="text-2xl font-bold text-redColor">Mm-movie</h1>
             </Link>
           </div>
-          <div
+          <form
+          onSubmit={(e) => handleSubmit(e)}
             className={`${
               search ? "hidden" : "block absolute z-50"
             } md:hidden absolute top-16 w-full`}
@@ -58,9 +59,11 @@ const Header = () => {
             <input
               className="outline-none w-full px-2 py-3 text-sm text-whiteColor bg-secondary rounded-b-sm"
               type="text"
+              value={string}
+              onChange={handleChange}
               placeholder="Search movies..."
             />
-          </div>
+          </form>
           <div className="md:hidden flex flex-row w-16 justify-between m-4">
             <div>
               <BiSearchAlt2
@@ -142,7 +145,7 @@ const Header = () => {
           </div>
         </nav>
       </div>
-      <div className={`${movie.length===0? "hidden" : "block"} bg-secondary w-96 absolute z-50 top-16 right-5 max-h-80 overflow-y-scroll scroll-m-4 scrollbar-track-transprent scrollbar-thumb-secondary scrollbar-thin rounded-sm p-3`}>
+      <div className={`${movie.length===0? "hidden" : "block"} bg-secondary w-80 md:w-96 absolute z-50 top-24 md:top-16 right-0 md:right-5 max-h-80 overflow-y-scroll scroll-m-4 scrollbar-track-transprent scrollbar-thumb-secondary scrollbar-thin rounded-sm p-3`}>
         {movie.map((d) => (
           <div onClick={()=>nav(`${d.media_type}/${d.id}`)} className="flex flex-row border-b-2 border-b-transprent justify-between">
           <h1 className="text-whiteColor">{d.title}{d.name}</h1>
