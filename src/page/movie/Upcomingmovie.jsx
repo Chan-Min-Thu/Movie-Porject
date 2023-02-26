@@ -29,7 +29,7 @@ const UpcomingMovie = () => {
   return(
   <div className="bg-background w-full h-auto">
     <div className="flex p-5 flex-row w-full justify-between">
-    <h1 className="text-sm text-whiteColor text-start opacity-60">20 Movies</h1>
+    <h1 className="text-sm text-whiteColor text-start opacity-60">{20*page} Movies</h1>
     <div>
     <button type="button" onClick={handlePreviousMovies} 
     disabled={page ===1? true: false}

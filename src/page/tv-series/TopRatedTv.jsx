@@ -29,7 +29,7 @@ const TopRatedTv = () => {
   return(
   <div className="bg-background w-full h-auto">
     <div className="flex p-5 flex-row w-full justify-between">
-    <h1 className="text-sm text-whiteColor text-start opacity-60">60 Tv-Series</h1>
+    <h1 className="text-sm text-whiteColor text-start opacity-60">{20*page} Tv-Series</h1>
     <div>
     <button type="button" onClick={handlePreviousTv} 
     disabled={page ===1? true: false}

@@ -26,12 +26,17 @@ const Header = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const search = document.getElementById('search')
+    if(e.target.value ===""){
+      search.style.display="none"
+    }
+    search.style.display="block"
     console.log("search input", searchInput);
   };
   const { data, isFetching } = useGetSearchQuery({
     searchValue: searchInput,
   });
-  console.log(data);
+  // console.log(data);
 
   useEffect(() => {
     if (isFetching) {
@@ -40,7 +45,15 @@ const Header = () => {
       setMovie(data.results);
     }
   }, [data]);
-  console.log("movie", movie);
+  // console.log("movie", movie);
+
+  const handleSearchResults =(media_type,id)=>{
+    setSearch(!search)
+    nav(`${media_type}/${id}`)
+    const searchid = document.getElementById('search')
+    searchid.style.display="none"
+
+  }
   return (
     <div>
       <div className="w-full bg-background md:px-5 z-50 sticky top-0">
@@ -54,15 +67,21 @@ const Header = () => {
           onSubmit={(e) => handleSubmit(e)}
             className={`${
               search ? "hidden" : "block absolute z-50"
-            } md:hidden absolute top-16 w-full`}
+            } md:hidden absolute top-16 w-full flex`}
           >
             <input
-              className="outline-none w-full px-2 py-3 text-sm text-whiteColor bg-secondary rounded-b-sm"
+              className="outline-none px-2 py-3 w-10/12 text-sm text-whiteColor bg-secondary rounded-b-sm"
               type="text"
+              defaultValue=""
               value={string}
               onChange={handleChange}
-              placeholder="Search movies..."
+              placeholder="Search Movies,Tvs..."
             />
+            <button
+                    type="submit"
+                    disabled={searchInput ? false : true}
+                    className="outline-none bg-secondary w-2/12 text-whiteColor text-sm p-2"
+            >Search</button>
           </form>
           <div className="md:hidden flex flex-row w-16 justify-between m-4">
             <div>
@@ -94,17 +113,17 @@ const Header = () => {
           >
             <ul className="text-whiteColor flex flex-col md:flex-row  justify-between text-normal">
               <li className="m-4 text-center select-none cursor-pointer font-medium">
-                <NavLink to="/" style={linkStyles}>
+                <NavLink to="/" onClick={()=>setOpen(false)} style={linkStyles}>
                   Home
                 </NavLink>
               </li>
               <li className="m-4 text-center select-none cursor-pointer font-medium">
-                <NavLink to="/movie" style={linkStyles}>
+                <NavLink to="/movie" onClick={()=>setOpen(false)} style={linkStyles}>
                   Movie
                 </NavLink>
               </li>
               <li className="m-4 text-center select-none cursor-pointer font-medium">
-                <NavLink to="/tv" style={linkStyles}>
+                <NavLink to="/tv" onClick={()=>setOpen(false)} style={linkStyles}>
                   Tv Series
                 </NavLink>
               </li>
@@ -117,7 +136,7 @@ const Header = () => {
                     onChange={handleChange}
                     id="simple-search"
                     className="outline-none bg-secondary text-gray-900 rounded-l-2xl text-sm p-1.5 pl-2.5"
-                    placeholder="Search..."
+                    placeholder="Search Movies,Tvs..."
                     required
                   />
                   <button
@@ -145,12 +164,12 @@ const Header = () => {
           </div>
         </nav>
       </div>
-      <div className={`${movie.length===0? "hidden" : "block"} bg-secondary w-80 md:w-96 absolute z-50 top-24 md:top-16 right-0 md:right-5 max-h-80 overflow-y-scroll scroll-m-4 scrollbar-track-transprent scrollbar-thumb-secondary scrollbar-thin rounded-sm p-3`}>
-        {movie.map((d) => (
-          <div onClick={()=>nav(`${d.media_type}/${d.id}`)} className="flex flex-row border-b-2 border-b-transprent justify-between">
-          <h1 className="text-whiteColor">{d.title}{d.name}</h1>
+      <div id="search" className={`${searchInput === ""? "hidden":"block"} bg-secondary w-80 md:w-96 absolute z-50 top-24 md:top-16 right-0 md:right-5 max-h-80 overflow-y-scroll scroll-m-4 scrollbar-track-transprent scrollbar-thumb-secondary scrollbar-thin rounded-sm p-3`}>
+        {movie.map((m) => (
+          <div onClick={()=>handleSearchResults(m.media_type,m.id)} className="flex flex-row border-b-2 border-b-transprent justify-between">
+          <h1 className="text-whiteColor">{m.title}{m.name}</h1>
           <div className="w-[50px] h-[70px] p-2">
-          <img src={`https://image.tmdb.org/t/p/w500/${d.poster_path}`}/>
+          <img src={`https://image.tmdb.org/t/p/w500/${m.poster_path}`}/>
           </div>
           </div>
         ))}
