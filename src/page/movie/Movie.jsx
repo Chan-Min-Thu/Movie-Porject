@@ -8,7 +8,7 @@ const ActiveLink = ({isActive})=>{
 const Movie = () => {
   return (
     <div className='bg-background md:h-auto h-screen'>
-      <ul className='flex flex-row text-whiteColor border-spacing-1 w-full justify-around border-2 border-x-0 border-t-0 border-b-transprent '>
+      <ul className='flex flex-row text-whiteColor border-spacing-1 w-11/12 justify-around border-2 border-x-0 border-t-0 border-b-transprent '>
        <NavLink style={ActiveLink} to='/movie/popular'><li>Popular</li></NavLink>
        <NavLink style={ActiveLink} to='/movie/top_rated'><li>Top Rated</li></NavLink>
        <NavLink style={ActiveLink} to='/movie/upcoming'><li>Upcoming</li></NavLink>

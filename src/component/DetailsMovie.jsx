@@ -60,7 +60,7 @@ const DetailsMovie = () => {
                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
               />
             </div>
-            <div className="md:w-[500px] w-full md:h-[400px] h-[430px] flex justify-end ml-10 md:ml-0 md:justify-center text-start flex-col mt-30 md:mt-30">
+            <div className="md:w-[500px] w-full md:h-[400px] h-[430px] flex justify-end ml-5 md:ml-0 md:justify-center text-start flex-col mt-30 md:mt-30">
             <motion.h1 
             initial={{y:30,opacity:0}}
             whileInView={{y:0,opacity:1}}
@@ -110,7 +110,7 @@ const DetailsMovie = () => {
             transition={{delay:0.5,duration:0.5}} className="text-whiteColor opacity-80 md:text-md">
                 {movie.overview}
               </motion.p>
-              <div onClick={()=>nav(-1)} className="fixed top-24 right-10">
+              <div onClick={()=>nav(-1)} className="absolute top-[-80px] right-[-50px]">
               <RxCross2 className="text-whiteColor text-2xl" />
               </div>
               <div>

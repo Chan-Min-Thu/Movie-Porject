@@ -30,10 +30,10 @@ const HomeContainer = ({movie}) => {
           src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
           className="opacity-20 w-full h-[500px]"
         />
-        <div className="absolute md:top-5 top-[2px] right-8 md:p-10 p-3 flex  flex-row w-11/12 h-5/12">
+        <div className="absolute md:top-5 top-[2px] right-8 md:p-10 p-3 flex  flex-row w-10/12 h-5/12">
           <div className="w-[250px] hidden md:block h-[350px] rounded-md mr-8">
             <motion.img
-              initial={{y:200,opacity:0}}
+              initial={{y:100,opacity:0}}
               whileInView={{y:0,opacity:1}}
               transition={{delay:0.3,transition:0.9}}
 
@@ -41,7 +41,7 @@ const HomeContainer = ({movie}) => {
               src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             />
           </div>
-          <div className="md:w-[500px] w-full md:h-[400px] h-[430px] flex justify-end md:justify-center text-start p-3 flex-col mt-2 md:mt-10">
+          <div className="md:w-[500px] w-11/12 md:h-[400px] h-[430px] flex justify-end md:justify-center text-start p-3 flex-col mt-2 md:mt-10">
             <motion.h1 
             initial={{y:30,opacity:0}}
             whileInView={{y:0,opacity:1}}
@@ -74,9 +74,9 @@ const HomeContainer = ({movie}) => {
             </div>
             <div className="mt-4">
               <motion.button
-                initial={{opacity:0,x:-40}}
-                whileInView={{opacity:1,x:0}}
-                transition={{delay:0.4,duration:0.5}}
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                transition={{delay:0.5,duration:0.8}}
                 type="button"
                 className="text-highlight bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm md:px-5 px-2 py-2.5 text-center mr-2 mb-2 bg-whiteColor dark:hover:bg-red-700 dark:focus:ring-red-900"
                 onClick={()=>nav(`/movie/${movie.id}`)}
@@ -84,9 +84,9 @@ const HomeContainer = ({movie}) => {
                 Details
               </motion.button>
               <motion.button
-                initial={{opacity:0,x:40}}
-                whileInView={{opacity:1,x:0}}
-                transition={{delay:0.4,duration:0.5}}
+                initial={{opacity:0,}}
+                whileInView={{opacity:1}}
+                transition={{delay:0.5,duration:0.8}}
                 type="button"
                 onClick={() =>setPlay(!play)}
                 className="text-whiteColor bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 bg-redColor dark:hover:bg-red-700 dark:focus:ring-red-900"

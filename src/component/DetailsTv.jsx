@@ -24,7 +24,7 @@ const DetailsTv = () => {
     <div className="bg-background h-screen">
       {isFetching ? (
       <div className="realtive w-full bg-background h-auto">
-      <div className="w-[250px] mt-10 h-[500px] bg-transprent"></div>
+      <div className="w-[250px] ml-10 mt-10 h-[500px] bg-transprent"></div>
       </div>
       ) : (
         <div className="realtive w-full bg-background h-auto">
@@ -43,7 +43,7 @@ const DetailsTv = () => {
                 src={`https://image.tmdb.org/t/p/w500/${tv.poster_path}`}
               />
             </div>
-            <div className="md:w-[500px] w-full md:h-[400px] h-[460px] flex justify-end ml-5 md:ml-0 md:justify-center text-start flex-col mt-30 md:mt-30">
+            <div className="md:w-[500px] w-full md:h-[350px] flex justify-end ml-4 md:ml-0 md:justify-center text-start flex-col mt-16 md:mt-30">
               <h1 className="text-highlight md:text-4xl text-2xl font-semibold mb-2">
                 {tv.original_name}
               </h1>
