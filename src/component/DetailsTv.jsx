@@ -24,7 +24,7 @@ const DetailsTv = () => {
     <div className="bg-background h-screen">
       {isFetching ? (
       <div className="realtive w-full bg-background h-auto">
-      <div className="w-[250px] h-[400px] bg-transprent"></div>
+      <div className="w-[250px] mt-10 h-[500px] bg-transprent"></div>
       </div>
       ) : (
         <div className="realtive w-full bg-background h-auto">
@@ -34,7 +34,7 @@ const DetailsTv = () => {
             src={`https://image.tmdb.org/t/p/w500/${tv.backdrop_path}`}
             className="opacity-20 w-full h-screen bg-cover"
           />
-          <div className="absolute md:top-40 top-[200px] left-2 md:p-10 p-3 flex md:justify-evenly justify-end  flex-row w-9/12 h-5/12">
+          <div className="absolute md:top-40 top-[200px] mt-14 left-2 md:p-10 p-3 flex md:justify-evenly justify-end  flex-row w-9/12 h-5/12">
          
             <div className="w-[250px] hidden md:block h-[400px] rounded-md">
 
@@ -43,7 +43,7 @@ const DetailsTv = () => {
                 src={`https://image.tmdb.org/t/p/w500/${tv.poster_path}`}
               />
             </div>
-            <div className="md:w-[500px] w-full md:h-[400px] h-[430px] flex justify-end ml-10 md:ml-0 md:justify-center text-start flex-col mt-30 md:mt-30">
+            <div className="md:w-[500px] w-full md:h-[400px] h-[460px] flex justify-end ml-5 md:ml-0 md:justify-center text-start flex-col mt-30 md:mt-30">
               <h1 className="text-highlight md:text-4xl text-2xl font-semibold mb-2">
                 {tv.original_name}
               </h1>
@@ -51,9 +51,9 @@ const DetailsTv = () => {
                 ({tv.last_air_date}) • {tv.genres[0].name} •  {tv.number_of_episodes}episodes
               </span>
               <div className="flex mb-5">
-                <AiFillHeart className="text-whiteColor text-2xl mr-5" />
+                <AiFillHeart className="text-whiteColor text-2xl mr-8" />
                 <MdStarRate className="text-highlight text-2xl" />
-                <span className="text-whiteColor text-sm ml-2 mr-5">
+                <span className="text-whiteColor text-sm ml-2 mr-8">
                   {parseFloat(tv.popularity.toFixed(2))}
                 </span>
                 {/* <FaPlay className="text-whiteColor text-2xl mr-2" />

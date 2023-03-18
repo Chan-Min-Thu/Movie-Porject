@@ -6,7 +6,7 @@ import {motion} from "framer-motion"
 const Trendingmovie = ({data}) => {
   const nav = useNavigate()
   return (
-    <div onClick={()=>nav(`/tv/${data.id}`)} className='w-[200px] relative h-[300px] p-10 rounded'>
+    <div key={data.id} onClick={()=>nav(`/tv/${data.id}`)} className='w-[200px] relative h-[300px] p-10 rounded'>
          <motion.img src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`} 
          initial={{scale:0}}
          whileInView={{scale:1}}

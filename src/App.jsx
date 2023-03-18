@@ -19,7 +19,7 @@ import DetailsTv from './component/DetailsTv'
 function App() {
 
   return ( 
-    <div className="App relative">
+    <div className="App relative scroll-smooth">
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}>

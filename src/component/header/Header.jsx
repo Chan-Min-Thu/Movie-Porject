@@ -83,7 +83,7 @@ const Header = () => {
                     className="outline-none bg-secondary w-2/12 text-whiteColor text-sm p-2"
             >Search</button>
           </form>
-          <div className="md:hidden flex flex-row w-16 justify-between m-4">
+          <div className="md:hidden flex flex-row md:w-16 justify-between m-4">
             <div>
               <BiSearchAlt2
                 onClick={() => setSearch(!search)}
@@ -164,12 +164,12 @@ const Header = () => {
           </div>
         </nav>
       </div>
-      <div id="search" className={`${searchInput === ""? "hidden":"block"} bg-secondary w-80 md:w-96 absolute z-50 top-24 md:top-16 right-0 md:right-5 max-h-80 overflow-y-scroll scroll-m-4 scrollbar-track-transprent scrollbar-thumb-secondary scrollbar-thin rounded-sm p-3`}>
+      <div id="search" className={`${searchInput === ""? "hidden":"block"} bg-secondary w-full md:w-96  absolute z-50 top-24 md:top-16 right-0 md:right-5 max-h-80 overflow-y-scroll scroll-m-4 scrollbar-track-transprent scrollbar-thumb-secondary scrollbar-thin rounded-sm p-3`}>
         {movie.map((m) => (
-          <div onClick={()=>handleSearchResults(m.media_type,m.id)} className="flex flex-row border-b-2 border-b-transprent justify-between">
+          <div key={m.id} onClick={()=>handleSearchResults(m.media_type,m.id)} className="flex flex-row border-b-2 border-b-transprent justify-between">
           <h1 className="text-whiteColor">{m.title}{m.name}</h1>
           <div className="w-[50px] h-[70px] p-2">
-          <img src={`https://image.tmdb.org/t/p/w500/${m.poster_path}`}/>
+          <img src={`https://image.tmdb.org/t/p/w500/${m.poster_path === null & undefined ? "": m.poster_path}`}/>
           </div>
           </div>
         ))}

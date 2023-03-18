@@ -7,7 +7,7 @@ const Trendingmovie = ({data}) => {
   // const id = data.id
   
   return (
-    <div className='w-[200px] relative h-[300px] p-10 rounded'>
+    <div key={data.id} className='w-[200px] relative h-[300px] p-10 rounded'>
       <Link to={`/movie/${data.id}`}>
          <motion.img src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`} 
          initial={{scale:0}}
