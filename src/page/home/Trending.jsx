@@ -51,8 +51,8 @@ const Trending = () => {
           movieData.results?.map((movie) => (
             <div onClick={()=>navigate(`/movie/${movie.id}`)} key={movie.id} className='w-[200px] relative h-[300px] p-10 rounded'>
             <motion.img 
-            initial={{scale:0}}
-            whileInView={{scale:1}}
+            initial={{opcity:0}}
+            whileInView={{opcity:1}}
             transition={{delay:0.4,duration:0.5}}
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
             className="max-w-[147px] h-full rounded hover:opacity-30"/>

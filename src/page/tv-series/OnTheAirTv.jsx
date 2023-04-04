@@ -39,8 +39,8 @@ const OnTheAirTv = () => {
     <button type="button" onClick={handleNextTv} className="text-redColor text-center bg-transprent hover:bg-gray-900   font-medium rounded-2xl text-sm px-3 py-1 mr-2 mb-2">Next</button>
     </div>
     </div>
-    <div className="flex flex-row flex-wrap md:justify-start justify-center w-11/12 md:h-[650px] h-screen overflow-scroll scrollbar-thin m-auto">
-    {isFetching?<h1 className="text-whiteColor text-3xl">Loading</h1>:
+    <div className="flex flex-row flex-wrap md:justify-start justify-center w-11/12 md:h-auto h-screen overflow-scroll scrollbar-thin m-auto">
+    {isFetching?<h1 className="text-whiteColor h-screen m-auto text-3xl">Loading</h1>:
     data?.results.map(movie => <TvCard key={movie.id} data={movie}/>)
 
     }

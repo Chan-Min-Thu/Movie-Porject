@@ -10,8 +10,8 @@ const Trendingmovie = ({data}) => {
     <div key={data.id} className='w-[200px] relative h-[300px] p-10 rounded'>
       <Link to={`/movie/${data.id}`}>
          <motion.img src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`} 
-         initial={{scale:0}}
-         whileInView={{scale:1}}
+         initial={{opacity:0}}
+         whileInView={{opacity:1}}
          transition={{delay:0.4,duration:0.5}}
          className="max-w-[147px] h-full rounded hover:opacity-30"/>
          <motion.div 

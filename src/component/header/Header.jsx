@@ -15,7 +15,7 @@ const linkStyles = ({ isActive }) => {
 const Header = () => {
   const nav = useNavigate()
   const [open, setOpen] = useState(false);
-  const [search, setSearch] = useState(false);
+  const [search, setSearch] = useState(true);
   const [searchInput, setSerachInput] = useState("");
   const [movie, setMovie] = useState([]);
   let string;
@@ -87,7 +87,7 @@ const Header = () => {
             <div>
               <BiSearchAlt2
                 onClick={() => setSearch(!search)}
-                className="text-whiteColor select-none cursor-pointer m-1 text-xl"
+                className="text-whiteColor select-none cursor-pointer mb-2 mr-2 text-xl"
               />
             </div>
             <div>

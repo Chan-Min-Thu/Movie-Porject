@@ -10,15 +10,15 @@ const Footer = () => {
       <div className="flex md:flex-row flex-wrap md:justify-around justify-center md:p-4 m-auto px-auto">
         <div className="my-6 mx-20 w-[150px]">
           <motion.h1 
-          initial={{scale:0}}
-          whileInView={{scale:1}}
+          initial={{opacity:0}}
+          whileInView={{opacity:1}}
           transition ={{delay:0.2,duration:0.6}}
            className="text-lg text-whiteColor mb-2 font-medium p-auto ">
             Movies
           </motion.h1>
           <motion.ul 
-          initial={{scale:0}}
-          whileInView={{scale:1}}
+          initial={{opacity:0}}
+          whileInView={{opacity:1}}
           transition={{delay:0.2,duration:0.6}}>
             <li className="text-sm text-whiteColor opacity-80 hover:bg-background py-2 px-3">
               Action
@@ -36,15 +36,15 @@ const Footer = () => {
         </div>
         <div className="my-6 mx-20 w-[150px]">
           <motion.h1
-          initial={{scale:0}}
-          whileInView={{scale:1}}
+          initial={{opacity:0}}
+          whileInView={{opacity:1}}
           transition ={{delay:0.3,duration:0.6}}
           className="text-lg text-whiteColor mb-2 font-medium p-auto ">
             TV-Series
           </motion.h1>
           <motion.ul
-           initial={{scale:0}}
-           whileInView={{scale:1}}
+           initial={{opacity:0}}
+           whileInView={{opacity:1}}
            transition={{delay:0.3,duration:0.6}}>
             <li className="text-sm text-whiteColor opacity-80 hover:bg-background py-2 px-3">
               Action
@@ -63,14 +63,14 @@ const Footer = () => {
         <div className="my-6 mx-20 w-[150px]">
           <div>
             <motion.h1
-            initial={{scale:0}}
-            whileInView={{scale:1}}
+            initial={{opacity:0}}
+            whileInView={{opacity:1}}
             transition ={{delay:0.4,duration:0.6}} className="text-lg text-whiteColor mb-2 font-medium p-auto ">
               Contact
             </motion.h1>
             <motion.ul
-             initial={{scale:0}}
-             whileInView={{scale:1}}
+             initial={{opacity:0}}
+             whileInView={{opacity:1}}
              transition={{delay:0.4,duration:0.6}}>
               <li className="text-sm text-whiteColor text-start opacity-80 hover:bg-background py-2 px-3">
                 Chanmin Thu
@@ -86,13 +86,13 @@ const Footer = () => {
         </div>
         <div className="my-6 mx-20 w-[150px]">
           <motion.h1 
-          initial={{scale:0}}
-          whileInView={{scale:1}}
+          initial={{opacity:0}}
+          whileInView={{opacity:1}}
           transition ={{delay:0.5,duration:0.6}}
           className="text-lg text-whiteColor mb-2 font-medium ">Support</motion.h1>
           <motion.ul  
-          initial={{scale:0}}
-          whileInView={{scale:1}}
+          initial={{opacity:0}}
+          whileInView={{opacity:1}}
           transition={{delay:0.4,duration:0.6}}
           className="gap-3">
             <li className="text-sm text-whiteColor opacity-80 hover:bg-background py-2 px-3">
@@ -110,8 +110,8 @@ const Footer = () => {
       <div className="bg-transprent">
         <div className="flex flex-row justify-evenly py-8">
           <motion.h1
-          initial={{scale:0}}
-          whileInView={{scale:1}}
+          initial={{opacity:0}}
+          whileInView={{opacity:1}}
           transition ={{delay:0.4,duration:0.6}} className="text-2xl text-redColor font-semibold mr-6">
             Mm-movie.
           </motion.h1>

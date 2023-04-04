@@ -53,8 +53,8 @@ const DetailsMovie = () => {
             <div className="w-[250px] hidden md:block h-[400px] rounded-md">
 
             <motion.img
-            initial={{scale:0}}
-            whileInView={{scale:1}}
+            initial={{opacity:0}}
+            whileInView={{opacity:1}}
             transition={{delay:0.4,duration:0.7}}
                 className="w-[250px] h-[400px] rounded-md"
                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
@@ -105,16 +105,13 @@ const DetailsMovie = () => {
             </iframe>
             </div>
                <motion.p 
-            initial={{y:30,opacity:0}}
-            whileInView={{y:0,opacity:1}}
+            initial={{opacity:0}}
+            whileInView={{opacity:1}}
             transition={{delay:0.5,duration:0.5}} className="text-whiteColor opacity-80 md:text-md">
                 {movie.overview}
               </motion.p>
-              <div onClick={()=>nav(-1)} className="absolute top-[-80px] right-[-50px]">
+              <div onClick={()=>nav(-1)} className="absolute top-[-40px] right-[-50px]">
               <RxCross2 className="text-whiteColor text-2xl" />
-              </div>
-              <div>
-                <img src=""/>
               </div>
             </div>
           </div>

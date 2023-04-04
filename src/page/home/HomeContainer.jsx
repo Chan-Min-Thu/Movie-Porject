@@ -31,12 +31,11 @@ const HomeContainer = ({movie}) => {
           className="opacity-20 w-full h-[500px]"
         />
         <div className="absolute md:top-5 top-[2px] right-8 md:p-10 p-3 flex  flex-row w-10/12 h-5/12">
-          <div className="w-[250px] hidden md:block h-[350px] rounded-md mr-8">
+          <div className="w-[250px] hidden md:block h-[350px] mb-10 rounded-md mr-8">
             <motion.img
-              initial={{y:100,opacity:0}}
-              whileInView={{y:0,opacity:1}}
+              initial={{opacity:0}}
+              whileInView={{opacity:1}}
               transition={{delay:0.3,transition:0.9}}
-
               className="w-[250px] h-[350px] rounded-md"
               src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             />

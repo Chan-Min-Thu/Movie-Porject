@@ -51,8 +51,8 @@ const TopRated = () => {
           tvData.results?.map((tv) => (
             <div key={tv.id} onClick={()=>nav(`/tv/${tv.id}`)} className='w-[200px] relative h-[300px] p-10 rounded'>
              <motion.img 
-            initial={{scale:0}}
-            whileInView={{scale:1}}
+            initial={{opacity:0}}
+            whileInView={{opacity:1}}
             transition={{delay:0.4,duration:0.5}}
             src={`https://image.tmdb.org/t/p/w500/${tv.poster_path}`} 
             className="max-w-[147px] h-full rounded hover:opacity-30"/>
