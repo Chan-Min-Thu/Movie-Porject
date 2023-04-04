@@ -76,7 +76,7 @@ const Footer = () => {
                 Chanmin Thu
               </li>
               <li className="text-sm text-whiteColor text-start opacity-80 hover:bg-background py-2 px-3">
-                Chanminthu123@gmail.com
+                Chanminthu961549167@gmail.com
               </li>
               <li className="text-sm text-whiteColor text-start opacity-80 hover:bg-background py-2 px-3">
                 +959 977 452 160

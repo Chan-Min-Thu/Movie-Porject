@@ -52,7 +52,7 @@ const HomeContainer = ({movie}) => {
             initial={{y:30,opacity:0}}
             whileInView={{y:0,opacity:1}}
             transition={{delay:0.4,duration:0.5}}
-            className="text-whiteColor opacity-50 md:text-sm">
+            className="text-whiteColor opacity-50 h-[200px] overflow-scroll scrollbar-thin md:text-sm">
               {movie.overview}
             </motion.p>
             <div className={`${play? "md:w-[650px] w-full md:h-full h-[300px]":"w-0 h-0"} absolute md:top-0 bottom-20`}>
